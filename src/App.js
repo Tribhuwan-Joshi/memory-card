@@ -1,7 +1,15 @@
+import Header from "./components/Header"
+import Main from "./components/Main"
+import Footer from "./components/Footer"
+
 function App() {
   return (
-    <div className='bg-red-500 text-white'>Hello</div>
-  );
+    <>
+      <Header />
+      <Main  />
+      <Footer/>
+    </>
+  )
 }
 
 export default App;
