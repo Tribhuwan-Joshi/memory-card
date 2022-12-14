@@ -8,9 +8,9 @@ function ScoreCard() {
           <span className="text-base">Current Score - </span>
           <span className="current-score text-base bg-gray-600 p-1">10</span>
         </div>
-        <div className="best-score-container text-md">
-          <span className="text-base">Best Score - </span>
-          <span className="best-score text-base bg-gray-600 p-1">10</span>
+        <div className="best-score-container text-md ">
+          <span className="text-base ">Best Score - </span>
+          <span className="best-score text-base bg-gray-600 p-1 ">10</span>
         </div>
       </div>
     );
@@ -27,7 +27,7 @@ export default function Header() {
               width: "100px",
             }}
           />
-          <span>Memory Card</span>
+          <span className="invisible md:visible lg:visible">Memory Card</span>
         </div>
         <ScoreCard />
       </header>
