@@ -1,5 +1,5 @@
 import React from "react";
-export default function Card({ url, name }) {
+export default function Card({ url, name}) {
   return (
     <>
      

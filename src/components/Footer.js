@@ -2,7 +2,7 @@ import git from "../assets/git.png";
 
 export default function Footer() {
   return (
-    <footer className=" h-[5%] flex justify-center items-center text-lg font-[monospace]">
+    <footer className=" flex justify-center items-center text-lg font-[monospace]">
       Crafted by Tjsm{" "}
       <a
         target="_blank"
@@ -11,7 +11,7 @@ export default function Footer() {
       >
         <img
           src={git}
-          width="18px"
+          width="16px"
           alt="github"
           style={{ marginLeft: "10px" }}
         />
