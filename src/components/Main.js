@@ -26,12 +26,8 @@ export default function Main() {
           key={data.indexOf(i)}
           url={i.url}
           name={i.name}
-          shuffleCards={() =>
-            setData((data) => {
-              let res = shuffleCards(data);
-              console.log(res);
-              return res;
-            })
+          shuffle={() =>
+            setData(data => { let arr = [...data]; return shuffleCards(arr) })
           }
         />
       ))}
