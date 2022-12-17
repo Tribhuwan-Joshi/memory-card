@@ -1,9 +1,9 @@
 import React from "react";
-export default function Card({ url, name}) {
+export default function Card({ url, name,shuffleCards}) {
   return (
     <>
      
-      <div className="border-2 rounded-md  border-white  bg-slate-200 flex flex-col cursor-pointer hover:relative hover:bottom-2">
+      <div onClick={shuffleCards} className="border-2 rounded-md  border-white  bg-slate-200 flex flex-col cursor-pointer hover:relative hover:bottom-2">
         {" "}
         <img
           src={url}
