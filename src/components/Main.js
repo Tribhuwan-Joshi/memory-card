@@ -21,7 +21,7 @@ export default function Main({ updateScore, restart }) {
     const url = e.target.getAttribute("src");
 
     const index = newCountArr.findIndex((i) => i.url === url);
-    console.log(newCountArr);
+   
     newCountArr[index].count += 1;
 
     const twoClicks = newCountArr.some((i) => i.count > 1);
