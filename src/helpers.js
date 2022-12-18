@@ -27,4 +27,14 @@ function shuffleCards(arr) {
   return arr;
 }
 
-export { fetchCardData, getFormatData, shuffleCards };
+function formatCountData(arr) {
+  let res = [];
+  for (let i of arr) {
+    let obj = {};
+    obj.count = 0;
+    obj.url = i.url;
+    res.push(obj);
+  }
+  return res;
+}
+export { fetchCardData, getFormatData, formatCountData, shuffleCards };
