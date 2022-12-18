@@ -19,24 +19,12 @@ async function fetchCardData() {
   const formatData = getFormatData(data); // format data in proper way
   return formatData;
 }
+function shuffleCards(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
-// function shuffle(array) {
-//   var m = array.length,
-//     t,
-//     i;
-
-//   // While there remain elements to shuffle…
-//   while (m) {
-//     // Pick a remaining element…
-//     i = Math.floor(Math.random() * m--);
-
-//     // And swap it with the current element.
-//     t = array[m];
-//     array[m] = array[i];
-//     array[i] = t;
-//   }
-
-//   return array;
-// }
-
-export {fetchCardData,getFormatData}
+export { fetchCardData, getFormatData, shuffleCards };
