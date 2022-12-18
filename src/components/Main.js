@@ -7,29 +7,45 @@ export default function Main({ updateScore, restart }) {
   const [countArr, setCountArr] = useState([]);
 
   useEffect(() => {
-    fetchCardData().then((cardData) => {
-      // fetchCardData is a async function
-      setData(cardData);
-      setCountArr(formatCountData(cardData));
-    });
+    if (restart === false) {
+      fetchCardData().then((cardData) => {
+        // fetchCardData is a async function
+        setData(cardData);
+        setCountArr(formatCountData(cardData));
+      });
+    }
   }, [restart]);
 
   function handleCardClick(e) {
     const newCountArr = [...countArr];
     const url = e.target.getAttribute("src");
+
     const index = newCountArr.findIndex((i) => i.url === url);
+    console.log(newCountArr);
     newCountArr[index].count += 1;
-    const twoClicks = newCountArr.some(i => i.count > 1);
+
+    const twoClicks = newCountArr.some((i) => i.count > 1);
+    const allClicks = newCountArr.every((i) => i.count === 1);
+
     if (twoClicks) {
-      // setCurrCount = 1
+      updateScore(1, 0, 0);
+      setCountArr((prev) => {
+        let clone = [...prev];
+        return clone.map((i, e) => { if (e === index) return { ...i, count: 1 }; return { ...i, count: 0 } });
+      });
       
+      // set the countArr with all 0 except the current onw
+    } else if (allClicks) {
+      updateScore(0, 1, 0);
+      setCountArr((prev) => {
+        let clone = [...prev];
+        return clone.map((i) => ({...i , count:0}));
+      });
+    } else {
+      updateScore(0, 0, 1);
+      setCountArr(newCountArr);
     }
     // set currentCount + 1
-    // if bestScore > currCount -> set bestScore + 1 and set to localStorage
-
-    // if all clicks -> set CurrentScore = 0 and set restart = true
-    
-    setCountArr(newCountArr);
   }
 
   return (

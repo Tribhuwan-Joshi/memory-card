@@ -2,7 +2,7 @@ import Dog from "../assets/headIcon.png";
 function CurScore({ curScore }) {
   return (
     <div className="current-score-container text-md">
-      <span className="text-base">Current Score - </span>
+      <span className="text-base ">Current Score - </span>
       <span className="current-score text-base bg-gray-600 p-1">
         {curScore}
       </span>
@@ -11,8 +11,8 @@ function CurScore({ curScore }) {
 }
 function BestSCore({ bestScore }) {
   return (
-    <div className="best-score-container text-md ">
-      <span className="text-base ">Best Score - </span>
+    <div className="best-score-container  text-md ">
+      <span className="text-base  ">Best Score - </span>
       <span className="best-score text-base bg-gray-600 p-1 ">{bestScore}</span>
     </div>
   );
